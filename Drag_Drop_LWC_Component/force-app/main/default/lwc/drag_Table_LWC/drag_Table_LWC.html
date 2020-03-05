@@ -1,0 +1,46 @@
+<template> 
+    
+    <lightning-card title="Case List" icon-name="standard:account">
+        
+        <div class="slds-p-around_x-small">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Account Name">Case Number</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Industry">Subject</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Phone">Priority</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Edit">Status</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="row_drag">
+                  <template for:each={caseList} for:item="cc"> 
+                        <tr key={cc.Id} class="slds-hint-parent">
+                            <td data-label="Prospecting">
+                                <div class="slds-truncate" title="Account Name">{cc.CaseNumber}</div>
+                            </td>
+                            <td data-label="Confidence">
+                                <div class="slds-truncate" title="Industry">{cc.Subject}</div>
+                            </td>
+                            <td data-label="Confidence">
+                                <div class="slds-truncate" title="Phone">{cc.Priority }</div>
+                            </td>
+                            <td data-label="Confidence">
+                                <div class="slds-truncate" title="Phone">{cc.Status}</div> 
+                            </td>
+                        </tr>
+                    </template>
+                    
+                </tbody>
+                
+            </table>
+        </div>
+    </lightning-card>
+</template>
