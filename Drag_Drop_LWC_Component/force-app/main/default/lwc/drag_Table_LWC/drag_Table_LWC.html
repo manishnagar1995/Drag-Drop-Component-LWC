@@ -3,7 +3,7 @@
     <lightning-card title="Case List" icon-name="standard:account">
         
         <div class="slds-p-around_x-small">
-            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <table class="tables_ui slds-table slds-table_cell-buffer slds-table_bordered"  id="t_draggable1">
                 <thead>
                     <tr class="slds-line-height_reset">
                         <th class="" scope="col">
@@ -18,9 +18,12 @@
                         <th class="" scope="col">
                             <div class="slds-truncate" title="Edit">Status</div>
                         </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Edit">Rank case</div>
+                        </th>
                     </tr>
                 </thead>
-                <tbody class="row_drag">
+                <tbody  class="t_sortable">
                   <template for:each={caseList} for:item="cc"> 
                         <tr key={cc.Id} class="slds-hint-parent">
                             <td data-label="Prospecting">
@@ -34,6 +37,9 @@
                             </td>
                             <td data-label="Confidence">
                                 <div class="slds-truncate" title="Phone">{cc.Status}</div> 
+                            </td>
+                            <td data-label="Confidence">
+                                <div class="slds-truncate" title="Phone">{cc.Rank_Case__c}</div> 
                             </td>
                         </tr>
                     </template>
